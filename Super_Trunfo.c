@@ -18,19 +18,19 @@ int main() {
     float Area2, PIB2;
 
     printf("Vamos cadastrar sua primeira carta.\nDigite o Estado: ");// Printf solicita os dados
-    scanf("%s", Estado1); //scanf para digitar
+    scanf("%[^\n]", Estado1); //scanf para digitar
 
     printf("Digite a Cidade:");
-    scanf("%s", Cidade1);
+    scanf(" %[^\n]", Cidade1);
 
     printf("Digite o Código da Carta:");
     scanf("%s", CodigoCarta1);
 
     printf("Digite o Número total da população:");
-    scanf("%f", &Populacao1);
+    scanf("%d", &Populacao1);
 
     printf("Digite quantos Pontos Turísticos têm:");
-    scanf("%f", &PontosTuristicos1);
+    scanf("%d", &PontosTuristicos1);
 
     printf("Digite a Área da Cidade:");
     scanf("%f", &Area1);
@@ -56,10 +56,10 @@ int main() {
 
     //inserir dados da carta 2
     printf("\nAgora cadastre a segunda carta.\nDigite o Estado: ");
-    scanf("%s", Estado2);
+    scanf("%[^\n]", Estado2);
 
     printf("Digite a Cidade:");
-    scanf("%s", Cidade2);
+    scanf(" %[^\n]", Cidade2);
 
     printf("Digite o Código da Carta:");
     scanf("%s", CodigoCarta2);
