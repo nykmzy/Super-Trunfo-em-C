@@ -38,8 +38,11 @@ int main() {
     printf("Digite o PIB:");
     scanf("%f", &PIB1);
 
+    //cálculo da densidade e do PIB per capta e Calcular o super poder da carta 1
     float PIBpCapita1 = PIB1 / Populacao1;
     float DensidadeP1 = Populacao1 / Area1;
+    float InversoDensidade1 = 1 / DensidadeP1;
+    float SuperPoder1 = Populacao1 + PontosTuristicos1 + Area1 + PIB1 + PIBpCapita1 + InversoDensidade1;
 
     //exibição dos dados da carta 1
     printf("\nEstes são os dados da primeira carta:\n");
@@ -52,17 +55,20 @@ int main() {
     printf("PIB: %.2f\n", PIB1);
     printf("Densidade Populacional: %.2f\n", DensidadeP1);
     printf("PIB per Capita: %.2f\n", PIBpCapita1);
+    printf("Super Poder:%2.f\n",SuperPoder1);
 
 
     //inserir dados da carta 2
+    // Antes de ler Estado2
+    getchar(); // Limpa o \n pendente no buffer
     printf("\nAgora cadastre a segunda carta.\nDigite o Estado: ");
     scanf("%[^\n]", Estado2);
 
-    printf("Digite a Cidade:");
-    scanf(" %[^\n]", Cidade2);
+    printf("Digite a Cidade da Carta:");
+    scanf(" %[^\n]", Cidade2); //ESPAÇO antes do %[^\n]
 
     printf("Digite o Código da Carta:");
-    scanf("%s", CodigoCarta2);
+    scanf(" %s", CodigoCarta2);
 
     printf("Digite o Número total da população:");
     scanf("%d", &Populacao2);
@@ -76,8 +82,11 @@ int main() {
     printf("Digite o PIB:");
     scanf("%f", &PIB2);
 
+    //cálculo da densidade e do PIB per capta e Calcular o super poder da carta 2
     float PIBpCapita2 = PIB2 / Populacao2;
     float DensidadeP2 = Populacao2 / Area2;
+    float InversoDensidade2 = 1 / DensidadeP2;
+    float SuperPoder2 = Populacao2 + PontosTuristicos2 + Area2 + PIB2 + PIBpCapita2 + InversoDensidade2;
 
     //exibição carta 2
     printf("\nEstes são os dados da segunda carta:\n");
@@ -90,7 +99,20 @@ int main() {
     printf("PIB: %f\n", PIB2);
     printf("Densidade Populacional: %2.f\n", DensidadeP2);
     printf("PIB per Capita: %2.f\n", PIBpCapita2);
+    printf("Super Poder:%.2f\n",SuperPoder2);
 
+    //Comparação de Cartas
+    // ? e : funcionam como if e else if
+    
+    printf("Comparação de Cartas:\n");
+    printf("População: %s\n", Populacao1 > Populacao2 ? "Carta 1 vence" : Populacao1 < Populacao2 ? "Carta 2 vence" : "Empate");
+    printf("Pontos Turísticos: %s\n", PontosTuristicos1 > PontosTuristicos2 ? "Carta 1 vence" : PontosTuristicos1 < PontosTuristicos2 ? "Carta 2 vence" : "Empate");
+    printf("Área: %s\n", Area1 > Area2 ? "Carta 1 vence" : Area1 < Area2 ? "Carta 2 vence" : "Empate");
+    printf("PIB: %s\n", PIB1 > PIB2 ? "Carta 1 vence" :PIB1 < PIB2 ? "Carta 2 vence" : "Empate");
+    printf("Densidade Populacional: %s\n", DensidadeP1 > DensidadeP2 ? "Carta 1 vence" : DensidadeP1 < DensidadeP2 ? "Carta 2 vence" : "Empate");
+    printf("PIB per Capita: %s\n", PIBpCapita1 > PIBpCapita2 ? "Carta 1 vence" : PIBpCapita1 < PIBpCapita2 ? "Carta 2 vence" : "Empate");
+    printf("Super Poder:%s\n",SuperPoder1 > SuperPoder2 ? "Carta 1 vence" : SuperPoder1 < SuperPoder2 ? "Carta 2 vence" : "Empate");
+    
 
     return 0;
 }
